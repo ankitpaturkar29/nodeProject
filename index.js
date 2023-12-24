@@ -1,7 +1,9 @@
 const express = require("express");
 const Users = require('./models/userActions');
 const app = express();
-const port = 3000;
+const dotenv = require('dotenv');
+dotenv.config();
+const port = process.env.PORT;
 
 app.get('/', (req, res) => {
   res.send('get all users!');
