@@ -104,6 +104,12 @@ app.delete('*', function(req, res){
   res.send('NON EXISTING END POINT', 404);
 });
 
+app.use(function (err, req, res, next) {
+  res.type('text/plain');
+  res.status(500);
+  res.send('500 Server Error Occured !');
+});
+
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
 });
