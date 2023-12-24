@@ -79,6 +79,31 @@ app.put('/api/users/:id', (req, res) => {
     res.status(500).json({message:' Unable to update user !'})
   })
 });
+
+// RESONSE TO NO EXISTING END POINTS FOR GET
+
+app.get('*', function(req, res){
+  res.send('NON EXISTING END POINT', 404);
+});
+
+// RESONSE TO NO EXISTING END POINTS FOR POST
+
+app.post('*', function(req, res){
+  res.send('NON EXISTING END POINT', 404);
+});
+
+// RESONSE TO NO EXISTING END POINTS FOR PUT
+
+app.put('*', function(req, res){
+  res.send('NON EXISTING END POINT', 404);
+});
+
+// RESONSE TO NO EXISTING END POINTS FOR DELETE
+
+app.delete('*', function(req, res){
+  res.send('NON EXISTING END POINT', 404);
+});
+
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
 });
