@@ -4,7 +4,7 @@
  */
 exports.up = function(knex) {
   return knex.schema.createTable('users',table =>{
-            table.increments()
+            table.uuid('id').defaultTo(knex.fn.uuid())
             table.string('username',128)
             .notNullable()
             table.integer('age')
